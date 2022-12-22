@@ -12,8 +12,9 @@
         <th><a href="index.php">Games</a></th>
         <th><a href="player.php">Players</a></th>
         <th><a href="team.php">Teams</a></th>
-        <th><?php echo $_COOKIE["usernamecookie"];?></th>
         <th><a href="tournament.php">Tournaments</a></th>
+        <th><?php echo $_COOKIE["usernamecookie"];?></th>
+        <th><a href="logout.php">Вийти</a></th>
     </tr>
 </table>
 <?php
@@ -31,11 +32,16 @@ if($result = $conn->query($sql)){
             echo "<td>" . $row["game_id"] . "</td>";
             echo "<td>" . $row["winner_team_id"] . "</td>";
             echo "<td>" . $row["played_at"] . "</td>";
+            if('admin' == $_COOKIE["userlevelcookie"]){
             echo "<td><a href='update_round.php?id=" . $row["id"] . "'>Змінити</a></td>";
             echo "<td><form action='delete_round.php' method='post'>
                         <input type='hidden' name='id' value='" . $row["id"] . "' />
                         <input type='submit' value='Видалити'>
                    </form></td>";
+            } else {
+                echo "<td></td>";
+                echo "<td></td>";
+            }
         echo "</tr>";
     }
     echo "</table>";

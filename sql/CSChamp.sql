@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 22 2022 г., 03:11
+-- Время создания: Дек 22 2022 г., 04:13
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -168,7 +168,7 @@ CREATE TABLE `usertbl` (
 --
 
 INSERT INTO `usertbl` (`id`, `full_name`, `email`, `username`, `password`, `admin`) VALUES
-(1, 'Ratushniy Pavel', 'pavel.4w@gmail.com', 'riccio', '12345', NULL);
+(1, 'Ratushniy Pavel', 'pavel.4w@gmail.com', 'riccio', '12345', '');
 
 --
 -- Индексы сохранённых таблиц
